@@ -24,7 +24,7 @@ export const App: React.FC<{
                         biomex
                     </div>
                 </Link>
-                <div className="text-center my-3 text-md cursor-pointer">
+                <div className="text-center my-3 text-md">
                     マイクラの名前履歴を検索するやつ
                 </div>
                 <Search />
