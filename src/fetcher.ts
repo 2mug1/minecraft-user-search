@@ -7,4 +7,4 @@ const client = axios.create({
     }
 });
 
-export const fetcher = url => client.get(url).then(res => res)
+export const fetcher = (url: string) => client.get(url).then(res => res)
