@@ -27,7 +27,7 @@ export const getServerSideProps = async (context: Context) => {
                 if (res.status != 200) {
                     return resolve(null)
                 }
-                resolve({ profile, usernameHistories: res.data as MojangUsernameHistory[] } as MojangUser)
+                resolve({ profile, usernameHistories: (res.data as MojangUsernameHistory[]).reverse() } as MojangUser)
             })
         })
     })
