@@ -4,7 +4,7 @@ import { Search } from '../components/search'
 import NextNprogress from 'nextjs-progressbar';
 
 import '../components/tailwind.scss'
-import '../components/index.scss'
+import '../components/app.scss'
 
 export const App: React.FC<{
     Component: React.FC, pageProps: any
