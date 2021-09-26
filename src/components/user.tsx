@@ -1,6 +1,5 @@
 import { MojangUser, MojangUsernameHistory } from "../types"
-import { format, formatDistance } from 'date-fns'
-import { ja } from 'date-fns/locale'
+import { format } from 'date-fns'
 
 const UsernameHistory: React.FC<{ histories: MojangUsernameHistory[] }> = ({ histories }) => {
     return (
