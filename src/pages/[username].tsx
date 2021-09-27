@@ -45,7 +45,7 @@ export const getServerSideProps = async (context: Context) => {
     }
 }
 
-const PlayerPage: React.FC<ServerSideProps> = ({ user, errorCode }) => {
+const UserPage: React.FC<ServerSideProps> = ({ user, errorCode }) => {
     if (errorCode) {
         return (
             <div className="mt-5">
@@ -75,6 +75,4 @@ const PlayerPage: React.FC<ServerSideProps> = ({ user, errorCode }) => {
     )
 }
 
-export default PlayerPage
-
-
+export default UserPage
