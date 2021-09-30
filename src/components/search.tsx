@@ -1,10 +1,20 @@
 import { useRouter } from "next/router"
-import { FormEvent, useState } from "react"
+import { FormEvent, useEffect, useState } from "react"
 import { FaSearch } from 'react-icons/fa'
 
 export const Search: React.FC<{}> = () => {
     const router = useRouter()
     const [username, setUsername] = useState("")
+
+     //リロードしても消えないように
+     useEffect(() => {
+        if (router.query.username) {
+            if (typeof router.query.username === "string") {
+                setUsername(router.query.username)
+            }
+        }
+    }, [])
+
     const submit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         if(username) {
