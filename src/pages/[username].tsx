@@ -11,7 +11,10 @@ type Context = {
 }
 
 type ServerSideProps = {
-    errorCode?: number
+    error?: {
+        code: number
+        message: string
+    },
     user?: MojangUser
 }
 
@@ -34,7 +37,10 @@ export const getServerSideProps = async (context: Context) => {
     if (!user) {
         return {
             props: {
-                errorCode: 404
+                error: {
+                    code: 404,
+                    message: "ユーザーが見つかりませんでした"
+                }
             } as ServerSideProps
         }
     }
@@ -45,11 +51,11 @@ export const getServerSideProps = async (context: Context) => {
     }
 }
 
-const UserPage: React.FC<ServerSideProps> = ({ user, errorCode }) => {
-    if (errorCode) {
+const UserPage: React.FC<ServerSideProps> = ({ user, error }) => {
+    if (error) {
         return (
             <div className="mt-5">
-                <p>ユーザーが見つかりませんでした</p>
+                <p>{error.code}: {error.message}</p>
                 <div className="mt-10">
                     <Link href="/">
                         インデックスに戻る
