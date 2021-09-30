@@ -18,7 +18,7 @@ export const App: React.FC<{
                 height={3}
                 showOnShallow={true}
             />
-            <div className="container md:w-1/2 py-32" >
+            <div className="container md:w-1/3 py-32" >
                 <Link href="/">
                     <div className="text-center my-3 text-lg cursor-pointer">
                         biomex
