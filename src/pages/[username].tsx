@@ -15,9 +15,19 @@ type ServerSideProps = {
 }
 
 export const getServerSideProps: GetServerSideProps<ServerSideProps> = async (ctx) => {
-    ctx.res.setHeader("Cache-Control", "max-age=86400, public, stale-while-revalidate")
+    ctx.res.setHeader("Cache-Control", "max-age=300, public, stale-while-revalidate")
 
     const { username } = ctx.query
+
+    if(!username || username == null || typeof username != "string") return { 
+        props: {
+            error: {
+                code: 500,
+                message: "ユーザーネームを入力してください"
+            }
+        } 
+    }
+
     const user = await new Promise<MojangUser | null>((resolve) => {
         fetcher(`users/profiles/minecraft/${username}?at=${Date.now()}`).then((res) => {
             if (res.status != 200) {
@@ -39,13 +49,13 @@ export const getServerSideProps: GetServerSideProps<ServerSideProps> = async (ct
                     code: 404,
                     message: "ユーザーが見つかりませんでした"
                 }
-            } as ServerSideProps
+            }
         }
     }
     return {
         props: {
             user: user
-        } as ServerSideProps
+        }
     }
 }
 
