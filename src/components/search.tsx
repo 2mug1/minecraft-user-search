@@ -29,7 +29,7 @@ export const Search: React.FC<{}> = () => {
                     value={username}
                     required={true}
                     maxLength={16}
-                    placeholder="ユーザー名"
+                    placeholder="ユーザーネーム"
                     onChange={(event) => setUsername(event.target.value)}
                 />
                 <button type="submit" className="ml-2 transition duration-500 ease-in-out whitespace-nowrap block items-center justify-center border border-transparent 

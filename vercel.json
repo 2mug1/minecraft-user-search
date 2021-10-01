@@ -1,0 +1,6 @@
+{
+    "routes": [
+        { "src": "/api/.*", "status": 404 },
+        { "src": "^/image/(?<username>[^/]*)", "dest": "/api/image?username=$username" }
+    ]
+}
