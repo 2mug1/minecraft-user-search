@@ -1,6 +1,6 @@
 {
   "name": "biomex",
-  "version": "1.0.0",
+  "version": "1..0",
   "author": "iamtakagi",
   "license": "MIT",
   "devDependencies": {
