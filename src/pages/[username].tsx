@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Head from 'next/head'
 
 import { User, UserCard, UserImageLinks } from '../components/user';
 import { fetcher } from '../fetcher';
@@ -69,6 +70,9 @@ const UserPage: React.FC<ServerSideProps> = ({ user, error }) => {
         <>
             {user &&
                 <>
+                    <Head>
+                        <title>biomex - {user.profile.name}</title>
+                    </Head>
                     <div className="mt-5">
                         <UserCard user={user} />
                     </div>
