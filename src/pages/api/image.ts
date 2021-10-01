@@ -51,6 +51,7 @@ const image = async (req: NextApiRequest, res: NextApiResponse) => {
         res.setHeader("Link", `<${username}>; rel="canonical"`);
         res.setHeader("Content-Type", "image/png");
         res.setHeader("Content-DPR", "2.0");
+        res.setHeader("Cache-Control", "max-age=86400, public, stale-while-revalidate")
         res.send(img);
     })
 }

@@ -4,12 +4,7 @@ import Head from 'next/head'
 import { User, UserCard, UserImageLinks } from '../components/user';
 import { fetcher } from '../fetcher';
 import { MojangUser, MojangUsernameHistory, MojangUserProfile } from '../types';
-
-type Context = {
-    query: {
-        username: string
-    }
-}
+import { GetServerSideProps } from 'next';
 
 type ServerSideProps = {
     error?: {
@@ -19,8 +14,10 @@ type ServerSideProps = {
     user?: MojangUser
 }
 
-export const getServerSideProps = async (context: Context) => {
-    const { username } = context.query
+export const getServerSideProps: GetServerSideProps<ServerSideProps> = async (ctx) => {
+    ctx.res.setHeader("Cache-Control", "max-age=86400, public, stale-while-revalidate")
+
+    const { username } = ctx.query
     const user = await new Promise<MojangUser | null>((resolve) => {
         fetcher(`users/profiles/minecraft/${username}?at=${Date.now()}`).then((res) => {
             if (res.status != 200) {
