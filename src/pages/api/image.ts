@@ -4,7 +4,7 @@ import fs from 'fs'
 import path from 'path'
 
 const shot = async (username: string) => {
-    await chromium.font('https://ghcdn.rawgit.org/googlefonts/noto-cjk/main/Sans/SubsetOTF/JP/NotoSansJP-Medium.otf')
+    await chromium.font('https://ghcdn.rawgit.org/googlefonts/noto-cjk/main/Sans/SubsetOTF/JP/NotoSansJP-Regular.otf')
     const { puppeteer } = chromium
     const agent = await puppeteer.launch({
         args: [...chromium.args, '--window-size=1920,1080'],
