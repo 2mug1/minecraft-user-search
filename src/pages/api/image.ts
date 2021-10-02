@@ -3,20 +3,8 @@ import chromium from "chrome-aws-lambda"
 import fs from 'fs'
 import path from 'path'
 
-const chromiumFontSetup = () => {
-    if (process.env.HOME == null) process.env.HOME = "/tmp"
-    const dest = process.env.HOME + "/.fonts"
-    if (!fs.existsSync(dest)) fs.mkdirSync(dest)
-    const src = './public/fonts/Noto_Sans_JP'
-    for (const font of fs.readdirSync(src)) {
-        if (!font.endsWith(".otf")) continue
-        if (fs.existsSync(path.join(dest, font))) continue
-        fs.copyFileSync(path.join(src, font), path.join(dest, font))
-    }
-}
-
 const shot = async (username: string) => {
-    //chromiumFontSetup()
+    await chromium.font('https://ghcdn.rawgit.org/googlefonts/noto-cjk/main/Sans/SubsetOTF/JP/NotoSansJP-Medium.otf')
     const { puppeteer } = chromium
     const agent = await puppeteer.launch({
         args: [...chromium.args, '--window-size=1920,1080'],
