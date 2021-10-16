@@ -41,7 +41,7 @@ export const UserCard: React.FC<{ user: MojangUser }> = ({ user }) => {
                         <div className="text-sm">{user.profile.id}</div>
                     </div>
                     <div className="text-gray-500">
-                        <p>biomex.vercel.app/{user.profile.name}</p>
+                        <p>minecraft-user-search.vercel.app/{user.profile.name}</p>
                     </div>
                 </div>
 
@@ -76,22 +76,22 @@ export const UserImageLinks: React.FC<{ user: MojangUser }> = ({ user }) => {
             <p>画像リンク</p>
             <textarea
                 className="form-input mt-1 block w-full border-solid border-2 rounded-md resize-none"
-                value={`https://biomex.vercel.app/image/${name}#.png`}
+                value={`https://minecraft-user-search.vercel.app/image/${name}#.png`}
             />
             <p>Scrapbox</p>
             <textarea
                 className="form-input mt-1 block w-full border-solid border-2 rounded-md resize-none"
-                value={`[https://biomex.vercel.app/image/${name}#.png https://biomex.vercel.app/${name}]`}
+                value={`[https://minecraft-user-search.vercel.app/image/${name}#.png https://minecraft-user-search.vercel.app/${name}]`}
             />
             <p>Markdown</p>
             <textarea
                 className="form-input mt-1 block w-full border-solid border-2 rounded-md resize-none"
-                value={`[![${name}](https://biomex.vercel.app/image/${name}#.png)](https://biomex.vercel.app/${name})`}
+                value={`[![${name}](https://minecraft-user-search.vercel.app/image/${name}#.png)](https://minecraft-user-search.vercel.app/${name})`}
             />
             <p>HTML</p>
             <textarea
                 className="form-input mt-1 block w-full border-solid border-2 rounded-md resize-none"
-                value={`<a href="https://biomex.vercel.app/${name}"><img src="https://biomex.vercel.app/image/${name}#.png"></a>`}
+                value={`<a href="https://minecraft-user-search.vercel.app/${name}"><img src="https://minecraft-user-search.vercel.app/image/${name}#.png"></a>`}
             />
         </div>
 
