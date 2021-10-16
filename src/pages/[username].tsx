@@ -78,7 +78,7 @@ const UserPage: React.FC<ServerSideProps> = ({ user, error }) => {
             {user &&
                 <>
                     <Head>
-                        <title>biomex - {user.profile.name}</title>
+                        <title>minecraft-user-search - {user.profile.name}</title>
                     </Head>
                     <div className="mt-5">
                         <UserCard user={user} />
