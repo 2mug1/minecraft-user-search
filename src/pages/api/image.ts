@@ -19,7 +19,7 @@ const shot = async (username: string) => {
     const page = await agent.newPage()
     try {
         const targetElementSelector = '#user-card'
-        await page.goto(`https://biomex.vercel.app/${username}`)
+        await page.goto(`https://minecraft-user-search.vercel.app/${username}`)
         const clip = await page.evaluate((s: any) => {
             const el = document.querySelector(s)
             const { width, height, top: y, left: x } = el.getBoundingClientRect()

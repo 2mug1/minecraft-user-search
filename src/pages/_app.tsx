@@ -21,7 +21,7 @@ export const App: React.FC<{
             <div className="container md:w-1/3 py-32" >
                 <Link href="/">
                     <div className="text-center my-3 text-lg cursor-pointer">
-                        minecraft-user-search
+                    minecraft-user-search
                     </div>
                 </Link>
                 <div className="text-center my-3 text-md">
