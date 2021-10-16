@@ -7,7 +7,7 @@ class MyDocument extends Document {
       <Html lang="ja">
         <Head>
           <meta charSet="utf-8" />
-          <title>biomex</title>
+          <title>minecraft-user-search</title>
         </Head>
         <body>
           <Main />

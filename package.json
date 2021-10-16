@@ -1,6 +1,6 @@
 {
-  "name": "biomex",
-  "version": "1..0",
+  "name": "minecraft-user-search",
+  "version": "1.0.0",
   "author": "iamtakagi",
   "license": "MIT",
   "devDependencies": {
