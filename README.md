@@ -1,4 +1,4 @@
-# biomex
+# minecraft-user-search
 
 ## Licence
-iamtakagi/biomex is provided under the MIT license.
+iamtakagi/minecraft-user-search is provided under the MIT license.
