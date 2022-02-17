@@ -25,7 +25,7 @@ export const App: React.FC<{
                     </div>
                 </Link>
                 <div className="text-center my-3 text-md">
-                    マイクラのユーザーを検索するやつ
+                    マイクラのユーザーを検索できるやつ
                 </div>
                 <Search />
                 <Component {...pageProps} />
